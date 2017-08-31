@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Read The Important Quotes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script 
+src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+ body {
+  background-color:maroon;
+  color: #00bbef;
+  font-family: Monaco;
+  font-size: 10pt;
+  overflow: hidden;
+}
+h1 {
+  padding: 0rem 0.8rem;
+  margin: 0;
+  color:lime;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+#quote {
+  max-width: 80vw;
+  text-align: center;
+  padding: 2rem 0;
+  color:cyan;
+  font-size:16pt;
+}
+#quote span svg {
+  height: 2em;
+  width: 2em;
+  fill: #00bbef;
+}
+#quote span svg.closeQuotes {
+  position: relative;
+  top: 1.4em;
+}
+#quote span p.quote {
+  display: inline;
+}
+#quote span p.author {
+  padding-top: 1.5em;
+  font-style: italic;
+}
+#quoteHeadline {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+#quoteButtons svg {
+  fill: #00bbef;
+  height: 2em;
+  width: 2em;
+  
+}
+#quoteButtons svg:hover {
+  fill: #41d6ff;
+}
+#name {
+  color:yellow;
+  text-decoration: none;
+  font-size:14pt;
+}
+#name p a:hover {
+  color: #41d6ff;
+}
+button {color:white;
+background-color:blue;
+font-weight:bold;
+width:80px;
+}
+
+</style>
+ 
+  </head>
+  <body>
+    <div id="container">
+      <div id="quoteHeadline">
+        <h1>Quote </h1>
+        <h1>For</h1>
+        <h1>Better</h1>
+		<h1>Life </h1>
+      </div>
+      <Machine></Machine>
+      <div id="quote"><span>
+          <svg class="openQuotes">
+            <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"></path>
+          </svg>
+          <p class="quote">Finally..</p>
+          <svg class="closeQuotes">
+            <path d="M11 9.275c0 5.141-3.892 10.519-10 11.725l-.984-2.126c2.215-.835 4.163-3.742 4.38-5.746-2.491-.392-4.396-2.547-4.396-5.149 0-3.182 2.584-4.979 5.199-4.979 3.015 0 5.801 2.305 5.801 6.275zm13 0c0 5.141-3.892 10.519-10 11.725l-.984-2.126c2.215-.835 4.163-3.742 4.38-5.746-2.491-.392-4.396-2.547-4.396-5.149 0-3.182 2.584-4.979 5.199-4.979 3.015 0 5.801 2.305 5.801 6.275z"></path>
+          </svg></span><span>
+          <p class="author">Mark</p></span></div>
+      <div id="quoteButtons">
+        
+		<button type='button' label='Next'>Next</button>
+		<!--
+        <svg data-action="random">
+
+          <path d="M12 1c-6.338 0-12 4.226-12 10.007 0 2.05.738 4.063 2.047 5.625.055 1.83-1.023 4.456-1.993 6.368 2.602-.47 6.301-1.508 7.978-2.536 9.236 2.247 15.968-3.405 15.968-9.457 0-5.812-5.701-10.007-12-10.007zm0 10.028c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028zm5 0c0 2.337-1.529 3.91-3.684 4.335l-.406-.87c.996-.375 1.637-1.587 1.637-2.493h-1.547v-4h4v3.028z"></path>
+        </svg>
+		-->
+      </div>
+      <div id="name">
+        <p>&copy; 2017 &nbsp;&nbsp;  Powered &nbsp; By:- &nbsp; Bakhsh &nbsp;Al Baloshi</p>
+      </div>
+    </div>
+	<script>
+	$(document).ready(getRandomQuote);
+$("button").bind("click", getRandomQuote);
+<!--
+$("svg[data-action='random']").bind( "click", getRandomQuote);
+$("svg[data-action='twitter']").bind( "click", shareOnTwitter);
+-->
+function shareOnTwitter(){
+  var quote = $('p.quote').text();
+  var author = $('p.author').text();
+  var seperator = " - ";
+  window.open("https://twitter.com/share?text="+quote+seperator+author);
+}
+
+function getRandomQuote(){
+  $.ajax({
+    type: "GET",
+    url: "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?",
+    dataType: 'jsonp',  
+}).done(function(data) {
+    var quote = data.quoteText;
+    var author = data.quoteAuthor;
+    $('p.quote').html(quote);
+    $('p.author').html(author);
+  });
+}         
+	</script>
+  </body>
+</html>
